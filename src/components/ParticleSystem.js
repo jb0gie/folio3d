@@ -10,7 +10,7 @@ export class ParticleSystem {
   init() {
     // Create particle geometry
     const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(this.particleCount * 3);
+    const positions = new Float32Array(this.particleCount * 2);
     const velocities = new Float32Array(this.particleCount * 3);
     
     for (let i = 0; i < this.particleCount * 3; i += 3) {
@@ -22,7 +22,7 @@ export class ParticleSystem {
       // Velocity
       velocities[i] = (Math.random() - 0.5) * 0.02;
       velocities[i + 1] = (Math.random() - 0.5) * 0.02;
-      velocities[i + 2] = (Math.random() - 0.5) * 0.02;
+      velocities[i + 2] = (Math.random() - 0.5) * 0.01;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
