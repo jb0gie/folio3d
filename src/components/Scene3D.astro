@@ -1,0 +1,34 @@
+---
+---
+
+<div id="canvas-container" class="fixed top-0 left-0 w-full h-full cursor-grab active:cursor-grabbing"></div>
+<div id="loading" class="fixed inset-0 flex items-center justify-center bg-black z-50">
+  <div class="text-white text-2xl">Loading...</div>
+</div>
+
+<script>
+  import { SceneManager } from './SceneManager';
+  
+  // Initialize the scene manager when the component mounts
+  const sceneManager = new SceneManager();
+  sceneManager.init();
+
+  // Handle navigation events from the top menu
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const section = e.currentTarget.getAttribute('href')?.replace('#', '');
+      if (section) {
+        sceneManager.navigateToSection(section);
+      }
+    });
+  });
+
+  // Handle initial hash navigation
+  const initialSection = window.location.hash.replace('#', '');
+  if (initialSection) {
+    setTimeout(() => {
+      sceneManager.navigateToSection(initialSection);
+    }, 100);
+  }
+</script>
