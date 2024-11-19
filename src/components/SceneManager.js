@@ -131,10 +131,10 @@ export class SceneManager {
 
   createPanels() {
     const positions = {
-      home: new THREE.Vector3(0, 3, 0),
-      work: new THREE.Vector3(4, 0, 0),
-      about: new THREE.Vector3(-4, 0, 0),
-      contact: new THREE.Vector3(0, -3, 0),
+      home: new THREE.Vector3(0, 4, 0),
+      about: new THREE.Vector3(-6, 0, 0),
+      work: new THREE.Vector3(6, 0, 0),
+      contact: new THREE.Vector3(0, -4, 0),
     };
 
     Object.entries(positions).forEach(([section, position]) => {
