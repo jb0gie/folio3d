@@ -22,8 +22,8 @@ export class SceneManager {
     this.createPanels();
     this.setupRaycaster();
 
-    this.particleSystem = new ParticleSystem(this.scene);
-    this.particleSystem.init();
+    //this.particleSystem = new ParticleSystem(this.scene);
+    //this.particleSystem.init();
 
     this.animate();
     this.setupEventListeners();
